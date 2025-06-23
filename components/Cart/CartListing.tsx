@@ -1,3 +1,4 @@
+
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import { RxCross2 } from 'react-icons/rx';
@@ -38,8 +39,6 @@ const CartListing = () => {
     }
   }, [cartListingItems?.transaction_date]);
 
-
-
   useEffect(() => {
     if (cartListingItems?.cust_name) {
       setCustomerName(cartListingItems?.cust_name);
@@ -52,8 +51,6 @@ const CartListing = () => {
     }
   }, [cartListingItems?.cust_name, cartListingItems?.purity, purity]);
 
-
-
   useEffect(() => {
     if (cartListingItems?.colour) {
       const colorOfItems: string = cartListingItems.colour;
@@ -61,7 +58,7 @@ const CartListing = () => {
         setUpdatedColor(colorOfItems);
         const updatedColors: any = [colorOfItems, ...colorList.filter((c: string) => c !== colorOfItems)];
         setColorList(updatedColors);
-   
+
       } else {
         console.warn("Colour value is missing in the first order item.");
       }
@@ -168,7 +165,6 @@ const CartListing = () => {
   }
 
 
-
   const handleDataRendering = () => {
     if (isLoading) {
       return <CartSkeleton />;
@@ -228,7 +224,7 @@ const CartListing = () => {
                     min={deliveryDate}
                   />
                 </div>
-                <div className="mt-2 row">
+                   <div className="mt-2 row">
                   <label className="col-md-4">Color:</label>
 
                   <span className="col-md-8">{updatedColor}</span>
