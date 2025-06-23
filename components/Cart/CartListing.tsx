@@ -224,7 +224,7 @@ const CartListing = () => {
                     min={deliveryDate}
                   />
                 </div>
-                   <div className="mt-2 row">
+                <div className="mt-2 row">
                   <label className="col-md-4">Color:</label>
 
                   <span className="col-md-8">{updatedColor}</span>
